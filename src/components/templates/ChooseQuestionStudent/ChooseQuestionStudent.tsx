@@ -23,23 +23,31 @@ export const ChooseQuestionStudent = (): JSX.Element => {
     apiData();
   }, [subject]);
   return (
-    <Background isVisible={false}>
+    <Background isVisible={questions.length > 0 ? false : true}>
       <>
         <TitlteH1 text={labels.SAYING_HI_TO_STUDENT} />
-        <TitleH2 text={labels.CHOOSE_QUESTION} />
-        <div className="flex flex-col items-center overflow-y-scroll">
-          {questions.map((question) => (
-            <SubjectOption
-              text={question.title}
-              onClick={() => {
-                navigate(`/questao/${subject}/${question.id}/aluno`, {
-                  state: question,
-                });
-              }}
-              key={question.id}
-            />
-          ))}
-        </div>
+        <TitleH2
+          text={
+            questions.length > 0
+              ? labels.CHOOSE_QUESTION
+              : labels.NO_CLASSES_YET
+          }
+        />
+        {questions.length > 0 && (
+          <div className="flex flex-col items-center overflow-y-scroll">
+            {questions.map((question) => (
+              <SubjectOption
+                text={question.title}
+                onClick={() => {
+                  navigate(`/questao/${subject}/${question.id}/aluno`, {
+                    state: question,
+                  });
+                }}
+                key={question.id}
+              />
+            ))}
+          </div>
+        )}
         <BottomNavBar />
       </>
     </Background>

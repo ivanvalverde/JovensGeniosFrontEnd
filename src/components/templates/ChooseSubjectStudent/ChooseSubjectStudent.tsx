@@ -23,16 +23,22 @@ export const ChooseSubjectStudent = (): JSX.Element => {
     <Background isVisible={!subjects.length}>
       <>
         <TitlteH1 text={labels.SAYING_HI_TO_STUDENT} />
-        <TitleH2 text={labels.CHOOSE_SUBJECT} />
-        <div className="flex flex-col items-center overflow-y-scroll">
-          {subjects.map((subject) => (
-            <ProfileOption
-              text={subject.name}
-              linkTo={`/questao/${subject.path}/aluno`}
-              key={subject.path}
-            />
-          ))}
-        </div>
+        <TitleH2
+          text={
+            subjects.length > 0 ? labels.CHOOSE_SUBJECT : labels.NO_SUBJECTS_YET
+          }
+        />
+        {subjects.length > 0 && (
+          <div className="flex flex-col items-center overflow-y-scroll">
+            {subjects.map((subject) => (
+              <ProfileOption
+                text={subject.name}
+                linkTo={`/questao/${subject.path}/aluno`}
+                key={subject.path}
+              />
+            ))}
+          </div>
+        )}
         <BottomNavBar />
       </>
     </Background>

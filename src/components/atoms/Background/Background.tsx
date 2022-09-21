@@ -13,7 +13,7 @@ export const Background = ({
   return (
     <div className="bg-slate-100 bg-no-repeat bg-cover bg-center bg-fixed h-full">
       {children}
-      <div className="absolute top-[40%] w-full">
+      <div className="absolute mobile:top-[40%] desktop:top-[50%] w-full">
         {isVisible && (
           <div className="relative w-[210px] h-[200px] mx-auto">
             <Circle tailwindClasses="bg-blue-500 h-[186px] w-[186px] absolute" />

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 interface IOptionNavBarProps {
   text: string;
-  colorText: string;
+  colorText?: string;
   children: JSX.Element;
   linkTo: string;
 }

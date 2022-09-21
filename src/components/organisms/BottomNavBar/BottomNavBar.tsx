@@ -3,12 +3,9 @@ import OptionNavBar from "../../molecules/OptionNavBar";
 import { labels } from "../../../shared/enums";
 import Icon from "../../atoms/Icon";
 import { svgs } from "../../../shared/svgs";
-import { useLocation } from "react-router-dom";
 
 export const BottomNavBar = (): JSX.Element => {
-  const { classIcon, configIcon, friendsIcon } = svgs;
-  const location = useLocation();
-  const isClass = location.pathname === "/area/aluno";
+  const { classIcon, backIcon, leaveIcon } = svgs;
   return (
     <div className="bg-white fixed bottom-0 h-[80px] w-full flex items-center justify-around rounded-lg z-20">
       <OptionNavBar
@@ -18,46 +15,52 @@ export const BottomNavBar = (): JSX.Element => {
             width={classIcon.width}
             viewBox={classIcon.viewBox}
             d={classIcon.d}
-            pathFill={isClass ? classIcon.selected : classIcon.pathFill}
+            pathFill={classIcon.selected}
             svgFill={classIcon.svgFill}
             xmlns={classIcon.xmlns}
           />
         }
         text={labels.CLASS}
-        colorText={isClass ? "text-blue-500": ""}
+        colorText={"text-blue-500"}
         linkTo="/area/aluno"
       />
       <OptionNavBar
         children={
           <Icon
-            height={friendsIcon.height}
-            width={friendsIcon.width}
-            viewBox={friendsIcon.viewBox}
-            d={friendsIcon.d}
-            pathFill={friendsIcon.pathFill}
-            svgFill={friendsIcon.svgFill}
-            xmlns={friendsIcon.xmlns}
+            height={backIcon.height}
+            width={backIcon.width}
+            viewBox={backIcon.viewBox}
+            d={backIcon.d}
+            pathFill={backIcon.pathFill}
+            svgFill={backIcon.svgFill}
+            xmlns={backIcon.xmlns}
+            stroke={backIcon.stroke}
+            strokeLineJoin={backIcon.strokeLineJoin}
+            strokeLinecap={backIcon.strokeLineCap}
+            strokeWidth={backIcon.strokeWidth}
           />
         }
-        text={labels.FRIENDS}
-        colorText={isClass ? "": ""}
+        text={labels.BACK}
         linkTo="/area/aluno"
       />
       <OptionNavBar
         children={
           <Icon
-            height={configIcon.height}
-            width={configIcon.width}
-            viewBox={configIcon.viewBox}
-            d={configIcon.d}
-            pathFill={configIcon.pathFill}
-            svgFill={configIcon.svgFill}
-            xmlns={configIcon.xmlns}
+            height={leaveIcon.height}
+            width={leaveIcon.width}
+            viewBox={leaveIcon.viewBox}
+            d={leaveIcon.d}
+            pathFill={leaveIcon.pathFill}
+            svgFill={leaveIcon.svgFill}
+            xmlns={leaveIcon.xmlns}
+            stroke={leaveIcon.stroke}
+            strokeLineJoin={leaveIcon.strokeLineJoin}
+            strokeLinecap={leaveIcon.strokeLineCap}
+            strokeWidth={leaveIcon.strokeWidth}
           />
         }
-        text={labels.CONFIG}
-        colorText={isClass ? "": ""}
-        linkTo="/area/aluno"
+        text={labels.EXIT}
+        linkTo="/"
       />
     </div>
   );
