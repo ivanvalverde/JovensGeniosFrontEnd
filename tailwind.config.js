@@ -11,9 +11,12 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'desktop': "url('../public/imgs/bgDesktop.jpg')",
-        'tablet': "url('../public/imgs/bgTablet.jpg')",
-        'mobile': "url('../public/imgs/bgMobile.jpg')"
+        'desktop': "linear-gradient(to right bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),url('../public/imgs/bgDesktop.jpg')",
+        'tablet': "linear-gradient(to right bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),url('../public/imgs/bgTablet.jpg')",
+        'mobile': "linear-gradient(to right bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),url('../public/imgs/bgMobile.jpg')"
+      },
+      fontFamily: {
+        'montserrat': ['Montserrat'],
       }
     },
   },
