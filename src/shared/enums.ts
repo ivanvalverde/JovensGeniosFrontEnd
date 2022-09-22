@@ -32,4 +32,7 @@ export enum labels {
   GEOGRAPHY = "Geografia",
   QUESTION = "Questão",
   TITLE = "Título",
+  SUCCESSFULY_CREATED_QUESTION = "Questão criada com sucesso!",
+  AVAILABLE_ON_STUDENT_CLASSES = "Ela já estará disponível nas aulas!",
+  SOMETHING_WENT_WRONG = "Algo deu errado!",
 }

@@ -1,46 +1,28 @@
-# Getting Started with Create React App
+# Proposta
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Criar um front-end que irá consumir os dados da API criada. A aplicação deverá ter como base o protótipo mobile first contido neste [link](https://www.figma.com/file/pRMFpy0Wct8K2XtEm1sdVT/Vue?node-id=0%3A1).
 
-## Available Scripts
+## Executando o projeto
 
-In the project directory, you can run:
+Primeiramente, confirme que o servidor back-end está rodando na porta 3000 (instruções de como subir o servidor no README.md do [repositório da API](https://github.com/ivanvalverde/JovensGeniosAPI)).<br>
+Em seguida, execute os seguintes comandos num terminal aberto neste diretório:
+
+### `npm install`
+
+Através deste comando, as dependências do projeto serão instaladas.
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Este comando irá executar a aplicação, como já existe outra rodando na porta 3000, o sistema informará que a mesma já está em uso e solicitará permissão para utilizar a porta 3001. Pressione Y para confirmar.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Utilize em seu navegador o link [http://localhost:3001](http://localhost:3001) para abrir a aplicação.
 
-### `npm test`
+**OBS: O usuário deve acessar as telas com resolução mobile (protótipo mobile first) apesar do site ser responsivo para web. Caso não saiba fazer através do navegador, acesse este [link](https://canaltech.com.br/mercado/como-testar-um-site-em-diferentes-resolucoes-de-tela/#:~:text=Usando%20o%20Chrome,%2B%20Shift%20%2B%20I%E2%80%9D).)**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Bibliotecas utilizadas
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+A biblioteca [TailwindCSS](https://tailwindcss.com/docs/installation) foi utilizada para estilizar a página em questão pois ela permite a fácil estilização dos componentes sem que os mesmos tenham estilos pré-definidos, diferente de bibliotecas de componentes.<br>
+Todas as chamadas a API construída foram feitas utilizando a biblioteca [Axios](https://axios-http.com/ptbr/docs/intro) por conta de seu uso simples, intuitivo e legibilidade do código.<br>
+O [Typescript](https://www.typescriptlang.org/) foi utilizado para maior escalabilidade do trabalho e para descobrir possíveis erros em tempo de desenvolvimento.<br>
+O [React-router](https://reactrouter.com/en/main) foi utilizado com a finalidade de lidar com as diferentes rotas disponíveis no projeto.<br>
+A biblioteca [React-confetti](https://www.npmjs.com/package/react-confetti) forneceu um componente essencial para a construção da aplicação.

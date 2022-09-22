@@ -13,7 +13,7 @@ export const QuestionInfoInput = ({
   type,
 }: IQuestionInfoInputProps): JSX.Element => {
   return (
-    <div className="w-4/5 flex  flex-col justify-center my-3">
+    <div className="mobile:w-4/5 desktop:w-5/12 desktop:mx-3 flex flex-col justify-center my-2">
       <label
         className={`font-montserrat ${
           type === "question" ? "bg-blue-500" : "bg-orange-500"

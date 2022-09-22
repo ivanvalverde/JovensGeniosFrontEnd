@@ -1,6 +1,7 @@
 /* eslint-disable no-loop-func */
 import axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { labels } from "../../../shared/enums";
 import {
   optionQuestion,
@@ -16,6 +17,7 @@ import InputAlternative from "../../molecules/InputAlternative";
 import BottomNavBar from "../../organisms/BottomNavBar";
 
 export const CreateQuestion = (): JSX.Element => {
+  const navigate = useNavigate();
   const [questionInfo, setQuestionInfo] = useState<questionInput>({
     alternatives: [],
     correctAnswer: "",
@@ -72,16 +74,20 @@ export const CreateQuestion = (): JSX.Element => {
       correctAnswer,
     });
 
-    const response = await axios.post(
-      `http://localhost:3000/ead/${questionInfo.subject}/questions/add`,
-      {
-        title: questionInfo.title,
-        question: questionInfo.question,
-        correctAnswer,
-        alternatives,
-      }
-    );
-    console.log(response)
+    try {
+      await axios.post(
+        `http://localhost:3000/ead/${questionInfo.subject}/questions/add`,
+        {
+          title: questionInfo.title,
+          question: questionInfo.question,
+          correctAnswer,
+          alternatives,
+        }
+      );
+      navigate("/questao/criada/sucesso", { state: questionInfo.title });
+    } catch (err) {
+      navigate("/questao/criada/falha", { state: questionInfo.title });
+    }
   };
 
   return (
@@ -90,16 +96,18 @@ export const CreateQuestion = (): JSX.Element => {
         <div className="flex flex-col items-center pt-10">
           <TitleH1 text={labels.SAYING_HI_TO_TEACHER} />
           <SubjectSelector setQuestionInfo={setQuestionInfo} />
-          <QuestionInfoInput
-            setQuestionInfo={setQuestionInfo}
-            text={labels.QUESTION}
-            type="question"
-          />
-          <QuestionInfoInput
-            setQuestionInfo={setQuestionInfo}
-            text={labels.TITLE}
-            type="title"
-          />
+          <div className="w-full flex mobile:flex-col desktop:flex-row items-center desktop:justify-center">
+            <QuestionInfoInput
+              setQuestionInfo={setQuestionInfo}
+              text={labels.QUESTION}
+              type="question"
+            />
+            <QuestionInfoInput
+              setQuestionInfo={setQuestionInfo}
+              text={labels.TITLE}
+              type="title"
+            />
+          </div>
           <InputAlternative
             colorOption="bg-blue-500"
             text="A)"

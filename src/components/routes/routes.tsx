@@ -6,6 +6,8 @@ import ChooseSubjectStudent from "../templates/ChooseSubjectStudent";
 import CorrectAnswer from "../templates/CorrectAnswer";
 import CreateQuestion from "../templates/CreateQuestion";
 import Question from "../templates/Question";
+import SomethingWentWrong from "../templates/SomethingWentWrong";
+import SuccessfullyCreated from "../templates/SuccessfullyCreated";
 import WrongAnswer from "../templates/WrongAnswer";
 
 export const routes = [
@@ -41,5 +43,13 @@ export const routes = [
   {
     path: "/questao/errada",
     element: <WrongAnswer />,
+  },
+  {
+    path: "/questao/criada/sucesso",
+    element: <SuccessfullyCreated />,
+  },
+  {
+    path: "/questao/criada/falha",
+    element: <SomethingWentWrong />,
   },
 ];

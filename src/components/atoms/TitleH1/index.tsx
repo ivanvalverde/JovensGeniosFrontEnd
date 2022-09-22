@@ -1,2 +1,2 @@
-import { TitlteH1 } from "./TitlteH1";
-export default TitlteH1;
+import { TitleH1 } from "./TitleH1";
+export default TitleH1;

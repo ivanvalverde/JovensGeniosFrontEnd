@@ -18,7 +18,7 @@ export const ContinueButton = ({
     <button
       className={`${
         disabled ? "bg-slate-300" : "bg-blue-500"
-      } text-white p-3 mb-3 mt-12 rounded-lg w-4/5 z-10 flex items-center justify-center relative mx-auto`}
+      } text-white p-3 mb-3 mt-10 rounded-lg w-4/5 z-10 flex items-center justify-center relative mx-auto`}
       onClick={onClick}
       disabled={disabled}
     >
