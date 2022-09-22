@@ -6,7 +6,7 @@ import Background from "../../atoms/Background";
 import ContinueButton from "../../atoms/ContinueButton";
 import Icon from "../../atoms/Icon";
 import QuestionDisplayer from "../../atoms/QuestionDisplayer";
-import TitlteH1 from "../../atoms/TitleH1";
+import TitleH1 from "../../atoms/TitleH1";
 import TitlteH2 from "../../atoms/TitleH2";
 
 export const WrongAnswer = (): JSX.Element => {
@@ -37,7 +37,7 @@ export const WrongAnswer = (): JSX.Element => {
             />
           </div>
           <div className="mt-[100px] z-20">
-            <TitlteH1 text={labels.YOU_ARE_WRONG} />
+            <TitleH1 text={labels.YOU_ARE_WRONG} />
           </div>
           <div className="mb-[30px] z-20">
             <TitlteH2 text={labels.TRY_AGAIN} />

@@ -5,7 +5,7 @@ import QuestionDisplayer from "../../atoms/QuestionDisplayer";
 import Confetti from "react-confetti";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import SuccessShapes from "../../molecules/SuccessShapes";
-import TitlteH1 from "../../atoms/TitleH1";
+import TitleH1 from "../../atoms/TitleH1";
 import TitlteH2 from "../../atoms/TitleH2";
 import { labels } from "../../../shared/enums";
 import ContinueButton from "../../atoms/ContinueButton";
@@ -27,7 +27,7 @@ export const CorrectAnswer = (): JSX.Element => {
           <QuestionDisplayer text={location.state} />
           <SuccessShapes />
           <div className="mt-[100px] z-20">
-            <TitlteH1 text={labels.YOU_ARE_INCREDIBLE} />
+            <TitleH1 text={labels.YOU_ARE_INCREDIBLE} />
           </div>
           <div className="mb-[30px] z-20">
             <TitlteH2 text={labels.CONGRATZ} />

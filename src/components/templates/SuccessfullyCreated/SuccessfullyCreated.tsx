@@ -6,8 +6,8 @@ import Background from "../../atoms/Background";
 import ContinueButton from "../../atoms/ContinueButton";
 import Icon from "../../atoms/Icon";
 import QuestionDisplayer from "../../atoms/QuestionDisplayer";
-import TitlteH1 from "../../atoms/TitleH1";
-import TitlteH2 from "../../atoms/TitleH2";
+import TitleH1 from "../../atoms/TitleH1";
+import TitleH2 from "../../atoms/TitleH2";
 
 export const SuccessfullyCreated = (): JSX.Element => {
   const location = useLocation();
@@ -38,8 +38,8 @@ export const SuccessfullyCreated = (): JSX.Element => {
               strokeWidth={thumbsUpIcon.strokeWidth}
             />
           </div>
-          <TitlteH1 text={labels.SUCCESSFULY_CREATED_QUESTION} />
-          <TitlteH2 text={labels.AVAILABLE_ON_STUDENT_CLASSES} />
+          <TitleH1 text={labels.SUCCESSFULY_CREATED_QUESTION} />
+          <TitleH2 text={labels.AVAILABLE_ON_STUDENT_CLASSES} />
           <ContinueButton text={labels.CONTINUE} onClick={onContinue} />
         </div>
       </>

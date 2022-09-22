@@ -86,7 +86,7 @@ export const CreateQuestion = (): JSX.Element => {
       );
       navigate("/questao/criada/sucesso", { state: questionInfo.title });
     } catch (err) {
-      navigate("/questao/criada/falha", { state: questionInfo.title });
+      navigate("/erro", { state: questionInfo.title });
     }
   };
 

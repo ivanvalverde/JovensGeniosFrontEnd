@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useContext, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { labels } from "../../../shared/enums";
@@ -10,7 +11,8 @@ import QuestionsContainer from "../../organisms/QuestionsContainer";
 
 export const Question = (): JSX.Element => {
   const location = useLocation();
-  const { setQuestionListLength, selected } = useContext(QuestionContext);
+  const { setQuestionListLength, selected, setScore } =
+    useContext(QuestionContext);
   const navigate = useNavigate();
   const { alternatives, correctAnswer, question, title } =
     location.state as question;
@@ -23,6 +25,12 @@ export const Question = (): JSX.Element => {
     for (let key in selected) {
       if (selected[key]) {
         if (alternatives[Number(key)] === correctAnswer) {
+          try {
+            axios.post("http://localhost:3000/aluno/experience/add/50");
+            setScore((prevState) => prevState + 50);
+          } catch (err) {
+            navigate("/erro");
+          }
           navigate("/questao/correta", { state: title });
         } else {
           navigate("/questao/errada", { state: title });
@@ -30,6 +38,7 @@ export const Question = (): JSX.Element => {
       }
     }
   };
+
   return (
     <QuestionBackground>
       <div className="pt-10 z-10 relative">

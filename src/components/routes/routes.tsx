@@ -49,7 +49,7 @@ export const routes = [
     element: <SuccessfullyCreated />,
   },
   {
-    path: "/questao/criada/falha",
+    path: "/erro",
     element: <SomethingWentWrong />,
   },
 ];
