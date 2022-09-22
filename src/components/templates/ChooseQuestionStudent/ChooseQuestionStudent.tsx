@@ -26,7 +26,7 @@ export const ChooseQuestionStudent = (): JSX.Element => {
     apiData();
   }, [subject]);
   return (
-    <Background isVisible={questions.length > 0 ? false : true}>
+    <Background isVisible={false}>
       <>
       <div className="flex w-full justify-center items-center">
           <ScoreDisplayer value={score.toString()} />
