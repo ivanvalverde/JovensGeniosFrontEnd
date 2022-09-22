@@ -3,26 +3,29 @@ import OptionNavBar from "../../molecules/OptionNavBar";
 import { labels } from "../../../shared/enums";
 import Icon from "../../atoms/Icon";
 import { svgs } from "../../../shared/svgs";
+import { useLocation } from "react-router-dom";
 
 export const BottomNavBar = (): JSX.Element => {
-  const { classIcon, backIcon, leaveIcon } = svgs;
+  const { classIcon, backIcon, leaveIcon, capIcon } = svgs;
+  const location = useLocation();
+  const isStudent = location.pathname.includes("aluno");
   return (
     <div className="bg-white fixed bottom-0 h-[80px] w-full flex items-center justify-around rounded-lg z-20">
       <OptionNavBar
         children={
           <Icon
-            height={classIcon.height}
-            width={classIcon.width}
-            viewBox={classIcon.viewBox}
-            d={classIcon.d}
-            pathFill={classIcon.selected}
-            svgFill={classIcon.svgFill}
-            xmlns={classIcon.xmlns}
+            height={isStudent ? classIcon.height : capIcon.height}
+            width={isStudent ? classIcon.width : capIcon.width}
+            viewBox={isStudent ? classIcon.viewBox : capIcon.viewBox}
+            d={isStudent ? classIcon.d : capIcon.d}
+            pathFill={isStudent ? classIcon.selected : capIcon.selected}
+            svgFill={isStudent ? classIcon.svgFill : capIcon.svgFill}
+            xmlns={isStudent ? classIcon.xmlns : capIcon.xmlns}
           />
         }
-        text={labels.CLASS}
+        text={isStudent ? labels.CLASS : labels.TEACH}
         colorText={"text-blue-500"}
-        linkTo="/area/aluno"
+        linkTo={isStudent ? "/area/aluno" : "/area/professor"}
       />
       <OptionNavBar
         children={
@@ -41,7 +44,7 @@ export const BottomNavBar = (): JSX.Element => {
           />
         }
         text={labels.BACK}
-        linkTo="/area/aluno"
+        linkTo={isStudent ? "/area/aluno" : "/area/professor"}
       />
       <OptionNavBar
         children={

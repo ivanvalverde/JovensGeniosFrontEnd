@@ -1,8 +1,10 @@
 import React from "react";
+import ChooseActionTeacher from "../templates/ChooseActionTeacher";
 import ChooseProfileTemplate from "../templates/ChooseProfileTemplate";
 import ChooseQuestionStudent from "../templates/ChooseQuestionStudent";
 import ChooseSubjectStudent from "../templates/ChooseSubjectStudent";
 import CorrectAnswer from "../templates/CorrectAnswer";
+import CreateQuestion from "../templates/CreateQuestion";
 import Question from "../templates/Question";
 import WrongAnswer from "../templates/WrongAnswer";
 
@@ -14,6 +16,15 @@ export const routes = [
   {
     path: "/area/aluno",
     element: <ChooseSubjectStudent />,
+  },
+  {
+    path: "/area/professor",
+    element: <ChooseActionTeacher />,
+  },
+
+  {
+    path: "/questao/criar",
+    element: <CreateQuestion />,
   },
   {
     path: "/questao/:subject/aluno",

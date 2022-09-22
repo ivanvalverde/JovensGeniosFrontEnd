@@ -11,6 +11,28 @@ export type questionsResponse = {
   correctAnswer: string;
 };
 
+export type questionInput = {
+  question: string;
+  title: string;
+  alternatives: string[];
+  correctAnswer: string;
+  subject: string;
+};
+
+export type optionSelected = {
+  a: boolean;
+  b: boolean;
+  c: boolean;
+  d: boolean;
+};
+
+export type optionQuestion = {
+  a: string;
+  b: string;
+  c: string;
+  d: string;
+};
+
 export type svg = {
   width: string;
   height: string;
@@ -24,13 +46,13 @@ export type svg = {
   strokeWidth?: string;
   strokeLineCap?: "round" | "inherit" | "butt" | "square" | undefined;
   strokeLineJoin?: "round" | "inherit" | "miter" | "bevel" | undefined;
+  disabledColor?: string;
 };
 
 export type question = {
-    id: number;
-    title: string;
-    question: string;
-    alternatives: string[];
-    correctAnswer: string;
-  }
-  
+  id: number;
+  title: string;
+  question: string;
+  alternatives: string[];
+  correctAnswer: string;
+};
